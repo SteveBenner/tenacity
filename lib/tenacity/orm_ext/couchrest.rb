@@ -121,7 +121,7 @@ module Tenacity
           unless self.respond_to?(property_name)
             property property_name, :type => id_class_for(association)
             property association.polymorphic_type, :type => String if association.polymorphic?
-            view_by property_name
+            view_by property_name if self.respond_to? :view_by
             after_destroy { |record| record._t_cleanup_belongs_to_association(association) }
           end
         end

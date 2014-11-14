@@ -13,7 +13,7 @@ end
 
 require 'rake'
 require 'rake/testtask'
-require 'rcov/rcovtask'
+# require 'rcov/rcovtask'
 require 'rdoc/task'
 require 'yard'
 
@@ -44,12 +44,12 @@ task :single_test, [:test_file, :test_name] do |test, args|
  system "ruby -I'lib:lib:test:test/fixtures' #{args['test_file']} -n #{args['test_name']}"
 end
 
-Rcov::RcovTask.new do |test|
-  test.libs << 'test' << 'test/fixtures'
-  test.pattern = 'test/**/*_test.rb'
-  test.verbose = true
-  test.rcov_opts << '--exclude "gems/*"'
-end
+# Rcov::RcovTask.new do |test|
+#   test.libs << 'test' << 'test/fixtures'
+#   test.pattern = 'test/**/*_test.rb'
+#   test.verbose = true
+#   test.rcov_opts << '--exclude "gems/*"'
+# end
 
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""

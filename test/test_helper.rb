@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'bundler'
 begin
   Bundler.setup(:default, :development)
@@ -7,6 +6,9 @@ rescue Bundler::BundlerError => e
   $stderr.puts "Run `bundle install` to install missing gems"
   exit e.status_code
 end
+
+require 'simplecov'
+Simplecov.start
 
 require 'test/unit'
 require 'shoulda'

@@ -20,7 +20,8 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "bundler", ">= 1.0.0"
   s.add_development_dependency "rake", ">= 0.8.7"
-  s.add_development_dependency "rcov", "~> 0.9.9"
+  # s.add_development_dependency "rcov", "~> 0.9.9"
+  s.add_development_dependency 'simplecov'
   s.add_development_dependency "shoulda", "~> 2.11.3"
   s.add_development_dependency "mocha", "~> 0.9.10"
   s.add_development_dependency "yard", "~> 0.6.4"
